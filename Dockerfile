@@ -14,17 +14,17 @@ RUN npm install
 COPY . .
 
 # Build the React app
-RUN npm run build
+#RUN npm run build
 
 # Use a lighter weight image for production
-FROM nginx:alpine
+#FROM nginx:alpine
 
 # Copy the build files from the previous stage to the NGINX server's directory
-COPY --from=build /app/build /usr/share/nginx/html
+#COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose port 80 to the outside world
-EXPOSE 80
+#EXPOSE 80
 
 # Command to run NGINX server
-CMD ["nginx", "-g", "daemon off;"]
+#CMD ["nginx", "-g", "daemon off;"]
 
